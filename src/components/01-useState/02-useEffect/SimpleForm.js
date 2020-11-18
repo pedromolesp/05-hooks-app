@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import "./effect.css";
+import { Message } from './Message';
 export const SimpleForm = () => {
+
+
     const [formState, setFormState] = useState({
         name: '',
         email: ""
     });
     const { name, email } = formState;
     useEffect(() => {
-        console.log('hey');
+        // console.log('hey');
     }, []);
     useEffect(() => {
-        console.log('form state cambio');
+        // console.log('form state cambio');
     }, [formState]);
     useEffect(() => {
-        console.log('email state cambio');
+        // console.log('email state cambio');
     }, [email]);
 
     const handleInputChange = ({ target }) => {
@@ -48,6 +51,7 @@ export const SimpleForm = () => {
                 ></input>
 
             </div>
+            {(name === '123') && <Message />}
         </>
     )
 }
