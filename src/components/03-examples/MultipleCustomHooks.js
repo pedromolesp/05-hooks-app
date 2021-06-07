@@ -4,8 +4,9 @@ import '../02-useEffect/effect.css';
 
 export const MultipleCustomHooks = () => {
     const { counter, increment } = useCounter(1);
+
     const { loading, data } = useFetch(`https://www.breakingbadapi.com/api/quotes/${counter}`);
-    const { author, quote } = !!data && data[0];
+    const { quote, author } = (!loading && data.length > 0) && data[0];
     return <div>
         <h1>BreakingBad Quotes</h1>
         <hr />
